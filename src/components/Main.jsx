@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Apod from "./main/Apod";
 import NeoWs from "./main/NeoWs";
 import Epic from "./main/Epic";
+import Mars from "./main/Mars";
 
 const Main = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -83,6 +84,11 @@ const Main = () => {
                 EPIC
                 </span>
               </li>
+              <li onClick={()=> handleSidebarClick("Mars")}>
+                <span className="ms-3 flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                Mars Rover Photos
+                </span>
+              </li>
             </ul>
           </div>
         </aside>
@@ -92,6 +98,7 @@ const Main = () => {
           {selectedView === "Apod" && <Apod />}
           {selectedView === "NeoWs" && <NeoWs />}
           {selectedView === "Epic" && <Epic />}
+          {selectedView === "Mars" && <Mars/>}
         </div>
       </div>
     </div>
