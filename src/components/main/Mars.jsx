@@ -56,7 +56,7 @@ const Mars = () => {
               <p className="text-white"><span className="font-bold">Status:</span> {photo.rover.status}</p>
             </div>
           </div>
-        ))}
+        ))}  
       </div>
       {displayCount < data.length && (
         <div className="flex justify-center mt-6">
