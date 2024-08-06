@@ -39,8 +39,8 @@ const NeoWs = () => {
             }
             const data = await res.json();
 
-            // Log the data to check its structure
-            console.log(data);
+            
+            // console.log(data);
 
             const allAsteroids = Object.values(data.near_earth_objects).flat();
             setAsteroids(allAsteroids);
