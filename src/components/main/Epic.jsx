@@ -10,24 +10,17 @@ const Epic = () => {
       const NASA_KEY = import.meta.env.VITE_NASA_API_KEY;
       const url = `https://api.nasa.gov/EPIC/api/natural/images?api_key=${NASA_KEY}`;
 
-    //   const localKey = `NASA-${today}`;
-
-    //   if (localStorage.getItem(localKey)) {
-    //     const apiData = JSON.parse(localStorage.getItem(localKey));
-    //     setData(apiData);
-    //     setLoading(false);
-    //     return;
-    //   }
+    
 
       try {
         const res = await fetch(url);
         const apiData = await res.json();
-        // localStorage.setItem(localKey, JSON.stringify(apiData));
+        
         setData(apiData);
         setLoading(false);
       } catch (error) {
         console.error(error);
-        setLoading(false);
+        setLoading(false); 
       }
     }
     fetchData();
@@ -45,7 +38,7 @@ const Epic = () => {
     <div className="flex flex-wrap items-center justify-center w-full h-full p-4 overflow-hidden bg-black text-white">
       {data.map((item) => {
         const { image, caption, date, identifier } = item;
-        const [year, month, day] = date.split(' ')[0].split('-'); // Extract year, month, day from date
+        const [year, month, day] = date.split(' ')[0].split('-'); 
         const baseURL = `https://epic.gsfc.nasa.gov/archive/natural/${year}/${month}/${day}/png/`;
         const imageURL = `${baseURL}${image}.png`;
 
