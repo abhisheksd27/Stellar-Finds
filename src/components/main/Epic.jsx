@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const Epic = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
-//   const today = new Date().toDateString();
+
 
   useEffect(() => {
     async function fetchData() {
