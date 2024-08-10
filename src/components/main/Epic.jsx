@@ -11,7 +11,7 @@ const Epic = () => {
       const url = `https://api.nasa.gov/EPIC/api/natural/images?api_key=${NASA_KEY}`;
 
     
-
+    
       try {
         const res = await fetch(url);
         const apiData = await res.json();
